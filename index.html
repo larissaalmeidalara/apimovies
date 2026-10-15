@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Movies Board</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* --- Estilos (mantive seu tema escuro + bordô) --- */
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Oswald',sans-serif;}
+     body{background:#0d0d0d;color:#fff;min-height:100vh;}
+/* HEADER */
+     header{background:#111;border-bottom:2px solid #800020;padding:18px 0;position:sticky;top:0;z-index:1000;}
+    .header-container{width:95%;max-width:1400px;margin:0 auto;display:flex;justify-content:flex-start;align-items:center;}
+     header h1{display:flex;align-items:center;gap:12px;color:#690f1e;font-size:2rem;font-weight:700;}
+    .logo{font-size:2.2rem;}
+/* CATÁLOGO */
+    .catalogo{width:95%;max-width:1400px;margin:30px auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:25px;}
+/* CARD */
+    .filme{background:linear-gradient(180deg,#1c1c1c,#151515);border-radius:20px;overflow:hidden;cursor:pointer;transition:.3s;border:1px solid rgba(255,255,255,.08);display:flex;flex-direction:column;}
+    .filme:hover{transform:translateY(-8px);border-color:#800020;box-shadow:0 15px 40px rgba(128,0,32,.45);}
+    .filme:focus{outline:3px solid rgba(128,0,32,.18);outline-offset:4px;}
+    .filme img{width:100%;height:340px;object-fit:cover;display:block;}
+    .info{padding:15px;text-align:left;}
+    .info h3{font-size:1.05rem;font-weight:600;margin-bottom:8px;}
+    .avaliacao{color:#ffd54f;font-size:.95rem;font-weight:600;}
+/* LOADING / ERRO */
+    .status{width:95%;max-width:1400px;margin:8px auto;color:#d0d0d0;font-size:0.95rem;}
+    .loader{display:inline-block;border:3px solid rgba(255,255,255,.08);border-top-color:#800020;border-radius:50%;width:18px;height:18px;animation:spin .8s linear infinite;margin-right:8px;vertical-align:middle;}
+@keyframes spin{to{transform:rotate(360deg);}}
+/* MODAL */
+    .modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);justify-content:center;align-items:center;padding:20px;z-index:9999;}
+    .modal[aria-hidden="false"]{display:flex;}
+    .modal-conteudo{width:100%;max-width:650px;background:#1b1b1b;border-radius:22px;overflow:hidden;border:1px solid #800020;box-shadow:0 10px 40px rgba(0,0,0,.6);animation:popup .25s ease;position:relative;max-height:90vh;display:flex;flex-direction:column;}
+    .modal-conteudo img{width:100%;height:360px;object-fit:cover;display:block;}
+    .modal-info{padding:20px;overflow:auto;}
+    .modal-info h2{margin-bottom:8px;color:#fff;}
+    .nota{color:#ffd54f;font-weight:600;margin-bottom:15px;}
+    .resumo{color:#d0d0d0;line-height:1.7;margin-bottom:8px;}
+    .fechar{position:absolute;top:12px;right:12px;width:42px;height:42px;border:none;border-radius:50%;background:#800020;color:white;cursor:pointer;font-size:20px;display:flex;align-items:center;justify-content:center;}
+    .fechar:hover{background:#a00028;}
+@keyframes popup{from{opacity:0;transform:scale(.8);}to{opacity:1;transform:scale(1);}}
+
+/* RESPONSIVO */
+@media(max-width:768px){
+    .catalogo{grid-template-columns:repeat(2,1fr);}
+    .filme img{height:250px;}
+    header h1{font-size:1.6rem;}
+    .modal-conteudo img{height:220px;}
+}
+@media(max-width:550px){
+    .catalogo{grid-template-columns:1fr;}
+    .modal-conteudo{max-width:95%;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-container">
+    <h1><span class="logo" aria-hidden="true">🎬</span><span>Movies Board</span></h1>
+  </div>
+</header>
+
+<main>
+  <div id="status" class="status" aria-live="polite"></div>
+  <div class="catalogo" id="catalogo" aria-live="off"></div>
+</main>
+
+<!-- Modal -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="tituloFilme" aria-describedby="resumoFilme">
+  <div class="modal-conteudo" role="document">
+    <button class="fechar" aria-label="Fechar" id="btnFechar">✕</button>
+    <img id="imagemFilme" src="" alt="Imagem do filme">
+    <div class="modal-info">
+      <h2 id="tituloFilme"></h2>
+      <div class="nota" id="notaFilme"></div>
+      <p class="resumo" id="resumoFilme"></p>
+    </div>
+  </div>
+</div>
+
+<script>
+/* --- Configuração: troque pela sua API --- */
+const API_URL = "/14.10/conteudo"; // ex: "https://14.10.0.1/api/conteudo"
+
+/* Elementos */
+const catalogoEl = document.getElementById('catalogo');
+const statusEl = document.getElementById('status');
+const modalEl = document.getElementById('modal');
+const btnFechar = document.getElementById('btnFechar');
+const imagemFilme = document.getElementById('imagemFilme');
+const tituloFilme = document.getElementById('tituloFilme');
+const notaFilme = document.getElementById('notaFilme');
+const resumoFilme = document.getElementById('resumoFilme');
+
+let lastFocusedElement = null;
+
+/* Mostra estado de carregamento */
+function showLoading(message = 'Carregando filmes...') {
+  statusEl.innerHTML = '<span class="loader" aria-hidden="true"></span>' + message;
+}
+
+/* Mostra erro */
+function showError(message = 'Erro ao carregar filmes.') {
+  statusEl.textContent = message;
+}
+
+/* Limpa status */
+function clearStatus() {
+  statusEl.textContent = '';
+}
+
+/* Renderiza cards dinamicamente */
+function renderMovies(movies) {
+  catalogoEl.innerHTML = '';
+  if (!movies || movies.length === 0) {
+    catalogoEl.innerHTML = '<div class="status">Nenhum filme encontrado.</div>';
+    return;
+  }
+
+  movies.forEach(movie => {
+    const article = document.createElement('article');
+    article.className = 'filme';
+    article.tabIndex = 0;               // torna focável
+    article.role = 'button';
+    article.setAttribute('aria-pressed', 'false');
+
+    // estrutura interna
+    article.innerHTML = `
+      <img src="${escapeHtml(movie.image || '')}" alt="${escapeHtml(movie.title || 'Poster')}" loading="lazy">
+      <div class="info">
+        <h3>${escapeHtml(movie.title || '—')}</h3>
+        <div class="avaliacao" aria-label="Avaliação ${movie.rating || '-'}">⭐ ${movie.rating ?? '-'} / 10</div>
+      </div>
+    `;
+
+    // abrir modal ao clicar
+    article.addEventListener('click', () => abrirFilme(movie));
+    // abrir modal ao pressionar Enter/Space quando em foco
+    article.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        abrirFilme(movie);
+      }
+    });
+
+    catalogoEl.appendChild(article);
+  });
+}
+
+/* Abre modal preenchendo os dados */
+function abrirFilme(movie) {
+  lastFocusedElement = document.activeElement;
+  tituloFilme.textContent = movie.title || '';
+  notaFilme.textContent = '⭐ Avaliação: ' + (movie.rating ?? '-') + ' / 10';
+  resumoFilme.textContent = movie.description || movie.summary || '';
+  imagemFilme.src = movie.image || '';
+  imagemFilme.alt = 'Poster do filme ' + (movie.title || '');
+
+  modalEl.setAttribute('aria-hidden', 'false');
+  modalEl.style.display = 'flex';
+  document.body.style.overflow = 'hidden'; // bloqueia rolagem de fundo
+  btnFechar.focus();
+}
+
+/* Fecha modal e restaura foco */
+function fecharFilme() {
+  modalEl.setAttribute('aria-hidden', 'true');
+  modalEl.style.display = 'none';
+  document.body.style.overflow = '';
+  // limpar conteúdo opcionalmente
+  imagemFilme.src = '';
+  tituloFilme.textContent = '';
+  notaFilme.textContent = '';
+  resumoFilme.textContent = '';
+  if (lastFocusedElement) lastFocusedElement.focus();
+}
+
+/* Carrega filmes da API */
+async function loadMovies() {
+  showLoading();
+  try {
+    const res = await fetch(API_URL, { method: 'GET' });
+    if (!res.ok) throw new Error('Status ' + res.status);
+    const data = await res.json();
+
+    // você pode adaptar dependendo da shape do retorno:
+    // se sua API retornar { movies: [...] } em vez de [...], use data.movies
+    const movies = Array.isArray(data) ? data : (data.movies || []);
+    renderMovies(movies);
+    clearStatus();
+  } catch (err) {
+    console.error('Erro ao buscar filmes:', err);
+    showError('Não foi possível carregar os filmes. Verifique a API/CORS e tente novamente.');
+  }
+}
+
+/* Util: evita injeção de HTML em strings vindas da API */
+function escapeHtml(str) {
+  if (!str) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
+/* --- Eventos do modal --- */
+/* Clicar fora fecha */
+modalEl.addEventListener('click', (event) => {
+  if (event.target === modalEl) fecharFilme();
+});
+/* Botão fechar */
+btnFechar.addEventListener('click', fecharFilme);
+/* Esc fecha */
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && modalEl.getAttribute('aria-hidden') === 'false') {
+    fecharFilme();
+  }
+});
+
+/* Iniciar */
+loadMovies();
+</script>
+</body>
+</html>

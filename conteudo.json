@@ -1,0 +1,190 @@
+{
+	"resultados": [
+		{
+			"id": 969681,
+			"titulo": "Homem-Aranha: Um Novo Dia",
+			"titulo_original": "Spider-Man: Brand New Day",
+			"sinopse": "É um novo dia para Peter Parker. Combatendo o crime em tempo integral como Homem-Aranha em um mundo que não se lembra mais dele e lidando com a pressão de ver seus antigos amigos seguirem em frente sem sua presença, Peter passa por uma mudança que talvez nem ele tenha o poder de controlar. Mas essa transformação também pode ser a única coisa capaz de deter uma surpreendente nova ameaça à cidade e às pessoas que ele ama: um poderoso vilão que ninguém sequer consegue enxergar.",
+			"avaliacao": 8.458,
+			"data_lancamento": "2026-07-29",
+			"cartaz": "https://image.tmdb.org/t/p/w500/x0nvYzQpyJc5pdT9lMnkMuYAg0O.jpg"
+		},
+		{
+			"id": 1423191,
+			"titulo": "Resident Evil",
+			"titulo_original": "Resident Evil",
+			"sinopse": "Bryan, um tranquilo entregador de órgãos, é enviado para uma entrega noturna no Hospital Geral de Raccoon City. No caminho por uma estrada montanhosa coberta de neve, ele acidentalmente atropela uma mulher desconhecida. Ela sobrevive, mas algo está muito errado. Ao tentar ajudar, Bryan se depara com um surto em larga escala envolvendo mutações horríveis com tentáculos e monstruosidades bioengenheiradas.",
+			"avaliacao": 7.308,
+			"data_lancamento": "2026-09-16",
+			"cartaz": "https://image.tmdb.org/t/p/w500/gQ76UL64RQe3oHwiwHwODTC23g4.jpg"
+		},
+		{
+			"id": 1291595,
+			"titulo": "Sobrenatural: Agora Entre Nós",
+			"titulo_original": "Insidious: Out of the Further",
+			"sinopse": "Um trio de criminosos se infiltra em um bairro tranquilo e força uma nova família a entrar no plano astral, onde descobrem uma verdade aterradora: o Além está se infiltrando no mundo real.",
+			"avaliacao": 7.742,
+			"data_lancamento": "2026-08-19",
+			"cartaz": "https://image.tmdb.org/t/p/w500/8IEzyoBOCbKIvJ9DMwHgceJkNsP.jpg"
+		},
+		{
+			"id": 1148365,
+			"titulo": "Matchbox - O Filme",
+			"titulo_original": "Matchbox the Movie",
+			"sinopse": "Quando um grupo de antigos amigos de infância se reencontra, o encontro toma um rumo inesperado ao se depararem com uma perigosa trama internacional e precisarem salvar o mundo.",
+			"avaliacao": 7.901,
+			"data_lancamento": "2026-10-05",
+			"cartaz": "https://image.tmdb.org/t/p/w500/hgPJA0NTmXYpPA3cgh4ZrI1PubL.jpg"
+		},
+		{
+			"id": 1368337,
+			"titulo": "A Odisseia",
+			"titulo_original": "The Odyssey",
+			"sinopse": "Acompanhe o rei grego Odisseu em sua perigosa jornada de 20 anos para voltar a Ítaca após a Guerra de Troia, enfrentando monstros e deuses enquanto sua esposa Penélope resiste em seu reino.",
+			"avaliacao": {
+				"source": "8.0",
+				"parsedValue": 8
+			},
+			"data_lancamento": "2026-07-15",
+			"cartaz": "https://image.tmdb.org/t/p/w500/muMwJAiMtReEHLKpKMWt2rMkYF7.jpg"
+		},
+		{
+			"id": 1101412,
+			"titulo": "A Queda 2: No Limite",
+			"titulo_original": "Fall 2: Deadpoint",
+			"sinopse": "De luto pela morte de sua irmã Shiloh, Jax Hunter cria um laço com Luce, a amiga corajosa de Shiloh. Juntas, elas enfrentam a perigosa passarela suspensa do Monte Kwan, na Tailândia. Quando um deslizamento de rochas as deixa presas em uma estreita prancha a mais de 3.000 metros de altitude, Jax precisa enfrentar seus medos para sobreviver.",
+			"avaliacao": 7.308,
+			"data_lancamento": "2026-09-01",
+			"cartaz": "https://image.tmdb.org/t/p/w500/xtxEvJACNnbz3WYmJ5mYT1a0KGk.jpg"
+		},
+		{
+			"id": 1236045,
+			"titulo": "Sobrevivência",
+			"titulo_original": "Animals",
+			"sinopse": "O filho de um candidato a prefeito de Los Angeles é sequestrado. Agora, ele e a esposa tentam conseguir o dinheiro do resgate e tomam decisões arriscadas.",
+			"avaliacao": 7.249,
+			"data_lancamento": "2026-10-09",
+			"cartaz": "https://image.tmdb.org/t/p/w500/62vtHEyzKhFRuEOLLiQfPi60mSs.jpg"
+		},
+		{
+			"id": 1377237,
+			"titulo": "Três Horas Para Viver",
+			"titulo_original": "Runner",
+			"sinopse": "Um transportador de elite embarca em uma missão urgente: entregar um órgão vital para salvar a vida de uma garotinha de sete anos. O que parecia ser uma tarefa objetiva logo se transforma em uma corrida frenética contra o tempo quando uma perigosa organização criminosa entra em cena para impedir o sucesso da entrega.",
+			"avaliacao": 8.278,
+			"data_lancamento": "2026-09-07",
+			"cartaz": "https://image.tmdb.org/t/p/w500/vzb3bKOFtciIVSEIsLOZH4uJfxN.jpg"
+		},
+		{
+			"id": 1228834,
+			"titulo": "The Fix",
+			"titulo_original": "The Fix",
+			"sinopse": "Desiludidos com o fim da guerra no Afeganistão, um grupo de ex-agentes da CIA, em desgraça e marcados pela guerra, parte para Teerã com o objetivo de realizar um golpe que mudará suas vidas.",
+			"avaliacao": 6.8,
+			"data_lancamento": "2026-09-10",
+			"cartaz": "https://image.tmdb.org/t/p/w500/a1j5writymMPFPyOhBT7s1xX6v6.jpg"
+		},
+		{
+			"id": 1712451,
+			"titulo": "Resident Dead",
+			"titulo_original": "Resident Dead",
+			"sinopse": "",
+			"avaliacao": 5.667,
+			"data_lancamento": "2026-09-04",
+			"cartaz": "https://image.tmdb.org/t/p/w500/qKhMVWwFikSUzOpkhOl35GBLkGH.jpg"
+		},
+		{
+			"id": 1101383,
+			"titulo": "O Fim da Rua",
+			"titulo_original": "The End of Oak Street",
+			"sinopse": "Após um misterioso evento cósmico abalar o bairro Oak Street e o transportar dos subúrbios para um lugar desconhecido, a família Platt descobre que sua sobrevivência vai depender da união entre todos para enfrentar um ambiente agora irreconhecível.",
+			"avaliacao": 7.095,
+			"data_lancamento": "2026-08-12",
+			"cartaz": "https://image.tmdb.org/t/p/w500/aqEPRht1pZR653rmU7eHyk8wSNP.jpg"
+		},
+		{
+			"id": 1294189,
+			"titulo": "The Mongoose",
+			"titulo_original": "The Mongoose",
+			"sinopse": "Um herói de guerra falsamente acusado, sem nada a perder, lidera a polícia em uma épica perseguição televisiva de carro pelo país, ajudado por membros de seu antigo batalhão das Forças Especiais do Exército e monitorado de perto por um público fascinado que torce por sua fuga segura.",
+			"avaliacao": {
+				"source": "0.0",
+				"parsedValue": 0
+			},
+			"data_lancamento": "2026-10-29",
+			"cartaz": "https://image.tmdb.org/t/p/w500/eSS5mvSG84UUuvtbHel5Yu3Wik4.jpg"
+		},
+		{
+			"id": 1339274,
+			"titulo": "No dejes a los niños solos",
+			"titulo_original": "No dejes a los niños solos",
+			"sinopse": "",
+			"avaliacao": 6.79,
+			"data_lancamento": "2026-05-14",
+			"cartaz": "https://image.tmdb.org/t/p/w500/w01yTCLE2nCSj8IMxUjrc8vIwQ9.jpg"
+		},
+		{
+			"id": 1751701,
+			"titulo": "After Impact",
+			"titulo_original": "After Impact",
+			"sinopse": "Depois de herdar a enorme estufa de seu pai quando um asteróide ameaça a Terra, Ethan enfrenta traição e isolamento. Sobrevivendo ao impacto no bunker de sua família, maltratado e desesperado, uma voz no rádio revela que não está sozinho.",
+			"avaliacao": 5.833,
+			"data_lancamento": "2026-09-15",
+			"cartaz": "https://image.tmdb.org/t/p/w500/yzDuAQCY2n6zzOlBkn6JzhLhY3k.jpg"
+		},
+		{
+			"id": 460458,
+			"titulo": "Resident Evil: Bem-Vindo a Raccoon City",
+			"titulo_original": "Resident Evil: Welcome to Raccoon City",
+			"sinopse": "O que já foi um dia a casa da gigante farmacêutica em expansão Umbrella Corporation, Raccoon City, é agora uma cidade agonizante do meio-oeste. O êxodo da empresa transformou a cidade em um deserto, com um grande mal fermentando escondido abaixo da superfície. Quando esse mal é libertado, um grupo de sobreviventes deve trabalhar juntos para descobrir a verdade por trás da Umbrella enquanto buscam viver por mais uma noite.",
+			"avaliacao": 5.946,
+			"data_lancamento": "2021-11-24",
+			"cartaz": "https://image.tmdb.org/t/p/w500/eStYYbyaxyDMzHVkGrmkiSrMi0h.jpg"
+		},
+		{
+			"id": 1084244,
+			"titulo": "Toy Story 5",
+			"titulo_original": "Toy Story 5",
+			"sinopse": "O trabalho de Buzz, Woody, Jessie e do resto da gangue fica exponencialmente mais difícil quando eles enfrentam uma nova ameaça à diversão: a tecnologia.",
+			"avaliacao": 8.286,
+			"data_lancamento": "2026-06-17",
+			"cartaz": "https://image.tmdb.org/t/p/w500/jTN1hdfP88Km63waezqIN1uUqT3.jpg"
+		},
+		{
+			"id": 1400837,
+			"titulo": "Outra Mamãe",
+			"titulo_original": "Other Mommy",
+			"sinopse": "Uma menina de 8 anos, filha de um casal que enfrenta problemas conjugais, encara uma entidade sinistra que sai do seu armário e torna-se cada vez mais ameaçadora para a família.",
+			"avaliacao": 5.99,
+			"data_lancamento": "2026-10-07",
+			"cartaz": "https://image.tmdb.org/t/p/w500/j6eXMsykSZnXJT20YTdsdS9PXPj.jpg"
+		},
+		{
+			"id": 1204680,
+			"titulo": "Coyote vs. Acme",
+			"titulo_original": "Coyote vs. Acme",
+			"sinopse": "Após décadas de falhas catastróficas com os produtos ACME em sua caçada ao Papa-Léguas, Wile E. Coyote decide que é hora de buscar justiça e processar a corporação. Ao lado de um advogado azarado, Coyote trava uma batalha jurídica épica contra o impiedoso CEO da companhia. Enquanto enfrentam o sistema, a dupla desenvolve uma amizade improvável e luta para provar que a culpa de tantos desastres nunca foi do instinto, mas sim de defeitos de fabricação.",
+			"avaliacao": 7.5,
+			"data_lancamento": "2026-08-20",
+			"cartaz": "https://image.tmdb.org/t/p/w500/rtT7jSuz7oF6t1XeW8OWV2yAIeD.jpg"
+		},
+		{
+			"id": 1058424,
+			"titulo": "Hope: O Primeiro Impacto",
+			"titulo_original": "호프",
+			"sinopse": "A polícia investiga a presença de uma criatura misteriosa que vem causando tumulto na remota vila de Hope Harbor. Ao seguir os rastros do animal, um grupo de caçadores acaba se tornando sua presa involuntária, dando início a um conflito que se transforma em uma tragédia de proporções cósmicas.",
+			"avaliacao": 7.205,
+			"data_lancamento": "2026-07-15",
+			"cartaz": "https://image.tmdb.org/t/p/w500/yDiw6WUpAdlidbQDtI09rWVvGtu.jpg"
+		},
+		{
+			"id": 1232569,
+			"titulo": "Pinóquio: Maldição de Madeira",
+			"titulo_original": "Pinocchio: Unstrung",
+			"sinopse": "O boneco de madeira Pinóquio é trazido à vida por forças macabras. Distante da inocência original, sua jornada para se tornar um menino de verdade é marcada por violência e vingança. À medida que Pinóquio persegue brutalmente aqueles que cruzam seu caminho, antigos laços familiares são distorcidos em horrores impensáveis.",
+			"avaliacao": 6.5,
+			"data_lancamento": "2026-07-22",
+			"cartaz": "https://image.tmdb.org/t/p/w500/wgO649swkzsI58q3ikpxYNvkwv7.jpg"
+		}
+	]
+}

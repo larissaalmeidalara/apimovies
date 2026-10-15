@@ -1,0 +1,171 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:"Oswald", sans-serif;
+    background:linear-gradient(180deg,#0a0a0a,#141414);
+    color:#fff;
+    min-height:100vh;
+}
+
+header{
+    background:#111;
+    border-bottom:2px solid #800020;
+    padding:20px 0;
+}
+
+.header-container{
+    width:95%;
+    max-width:1400px;
+    margin:auto;
+}
+
+header h1{
+    color:#d90429;
+    font-size:2rem;
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.catalogo{
+    max-width:1400px;
+    margin:auto;
+    padding:40px 20px;
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(230px,1fr));
+    gap:25px;
+}
+
+.filme{
+    background:#171717;
+    border-radius:18px;
+    overflow:hidden;
+    cursor:pointer;
+    transition:.35s;
+    position:relative;
+    border:1px solid rgba(179,0,0,.2);
+}
+
+.filme:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 30px rgba(179,0,0,.35);
+    border-color:#b30000;
+}
+
+.filme img{
+    width:100%;
+    height:340px;
+    object-fit:cover;
+    display:block;
+}
+
+.info{
+    padding:15px;
+}
+
+.info h3{
+    margin-bottom:8px;
+    font-size:1.1rem;
+}
+
+.avaliacao{
+    color:#ffd700;
+    font-weight:bold;
+    font-size:.95rem;
+}
+
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.9);
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    z-index:9999;
+}
+
+.modal-conteudo{
+    background:#161616;
+    width:100%;
+    max-width:800px;
+    border-radius:20px;
+    overflow:hidden;
+    border:1px solid #4e0505;
+    animation:zoom .3s ease;
+}
+
+.modal-banner{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+}
+
+.modal-info{
+    padding:25px;
+}
+
+.modal-info h2{
+    color:#4e0202;
+    margin-bottom:10px;
+}
+
+.modal-info p{
+    line-height:1.7;
+    color:#ddd;
+}
+
+.fechar{
+    position:absolute;
+    right:25px;
+    top:20px;
+    font-size:35px;
+    color:#fff;
+    cursor:pointer;
+}
+
+.fechar:hover{
+    color:#b30000;
+}
+
+@keyframes zoom{
+    from{
+        opacity:0;
+        transform:scale(.9);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+@media(max-width:768px){
+    .catalogo{
+        grid-template-columns:repeat(2,1fr);
+        gap:15px;
+    }
+
+    .filme img{
+        height:260px;
+    }
+
+    .modal-banner{
+        height:180px;
+    }
+
+    header{
+        padding:15px;
+        text-align:center;
+    }
+}
+
+@media(max-width:480px){
+    .catalogo{
+        grid-template-columns:1fr;
+    }
+}
